@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    *{box-sizing: border-box;}
+    body{margin: 0; padding:0;}
+    body > div {
+      width:100vw;
+      min-height:100vh;
+      
+    }
+    /* 헤더  */
+    body > div > header {
+      width:inherit;
+      height:100px;
+      background-color:#FFDEB4;
+    }
+    /* 메인 */
+    body > div > main {
+      width:inherit;
+      height:700px;
+      background-color: #FFF9CA;
+      
+    }
+
+    /* 메인 사이드바  */
+    body > div > main > nav{
+      width:300px;
+      height:inherit;
+      position:sticky;
+      top:0;
+
+    }
+    ul li {
+      list-style: none;
+      width:150px;
+      height:100px;
+      border: 1px solid;
+      margin-bottom: 10px;
+      background-color:#B2A4FF;
+      
+    }
+    ul {
+      padding-left: 0;
+      position:sticky;
+      top:0;
+    }
+
+    ul li:hover {
+      width:200px;
+      transition: 0.2s;
+    }
+
+    /* ========중앙 화면==========*/
+    body > div > main {
+      background-color: #fc9f9f;
+    }
+    body > div > main > section{
+      width:inherit;
+      height:inherit;
+      background-color: #fc9f9f;
+      
+    }
+    
+    /* 하단 */
+    body > div > footer {
+      width:inherit;
+      height:500px;
+      background-color:#B4E8E3;
+    }
+    body > div > main {
+      position:relative;
+    }
+    body > div > main > section > div{
+    
+      background-color: #FFB4B4;
+    }
+    body > div > main > section > div:hover {
+      position:relative;
+      bottom:20px;
+      right:20px;
+      transition: 5s;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div class="flex flex-col jc-start ai-center">
+    <header></header>
+    <main class="flex flex-row ai-center">
+      <nav class="flex ai-start flex-col flex-wrap">
+        <ul>
+          <li id="menu1" class="flex ai-center jc-center" value="red">menu1</li>
+          <li class="flex ai-center jc-center">menu2</li>
+          <li class="flex ai-center jc-center">menu3</li>
+          <li class="flex ai-center jc-center">menu4</li>
+        </ul>
+      </nav>
+      <section class="flex">
+        <div class="flex flex-1"></div>
+        <div class="flex flex-1"></div>
+        <div class="flex flex-1"></div>
+      </section>
+    </main>
+    <footer>
+    </footer>
+  </div>
+
+  <script>
+    const menu1 = document.getElementById("menu1");
+    const mainBox = document.getElementById("mainBox");
+
+    menu1.addEventListener("click",function(){
+      
+      console.log(menu1.value);
+    });
+      
+    
+  </script>
+</body>
+</html>
