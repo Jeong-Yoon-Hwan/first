@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root{
+      width:100vw;
+      height:100vh;
+      background-color: lightgreen;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root > section {
+      width:100px;
+      height:100px;
+      /* background-color: lightgray; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap:8px;
+      background: linear-gradient(to right,salmon ,tomato);
+      border-radius: 10px;
+      
+    }
+    #root > section:hover{
+      box-shadow:2px 3px 3px 1px lightyellow;
+      transition: 0.6s;
+    }
+    #root > section > div{
+      width:50px;
+      height:9px;
+      background-color: black;
+      border-radius: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const menuButton = document.querySelector("#root > section");
+    let box1 = document.querySelector("#root > section > div:nth-child(1)");
+    let box2 = document.querySelector("#root > section > div:nth-child(2)");
+    let box3 = document.querySelector("#root > section > div:nth-child(3)");
+    let state = true;
+    menuButton.addEventListener("click",function(){
+      if(state===true){
+        box1.style.transform="rotate(45deg)";
+        box1.style.position="absolute";
+        box1.style.transition="0.5s";
+        box2.style.opacity=0;
+        box2.style.transition="0.5s";
+        box3.style.transform="rotate(-45deg)";
+        box3.style.position="absolute";
+        box3.style.transition="0.5s";
+        state = false;
+        root.style.backgroundColor="lightblue";
+      }else{
+        box1.style.transform="rotate(0deg)";
+        box1.style.position="static";
+        box1.style.transition="0.5s";
+        box2.style.opacity="1";
+        box2.style.transition="0.5s";
+        box3.style.transform="rotate(0deg)";
+        box3.style.position="static";
+        box3.style.transition="0.5s";
+        state = true;
+        root.style.backgroundColor="lightgreen";
+      }
+      
+    });
+  </script>
+</body>
+</html>
